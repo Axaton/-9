@@ -1,0 +1,38 @@
+﻿<Window x:Class="Практическая__9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практическая__9"
+        mc:Ignorable="d"
+        Title="Практическая №9" Height="394" Width="566" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Добавить успеваемость" Click="AddPerfomancePerMonth_Click"/>
+                <MenuItem Header="Найти среднюю успеваемость" Click="AveragePerfomance_Click"/>
+                <MenuItem Header="Очистить список" Click="Clear_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="Информация о разработчике" Click="DeveloperInfo_Click"/>
+                <MenuItem Header="Информация о задании" Click="TaskInfo_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="222" Margin="10,32,0,0" VerticalAlignment="Top" Width="289"/>
+        <GroupBox Header="Успеваемость студента" HorizontalAlignment="Left" Height="222" Margin="330,32,0,0" VerticalAlignment="Top" Width="212">
+            <Grid HorizontalAlignment="Left" Height="198" Margin="10,0,-2,0" VerticalAlignment="Top" Width="192">
+                <TextBox x:Name="subject" HorizontalAlignment="Left" Height="23" Margin="38,52,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <Label Content="Дисциплина:" HorizontalAlignment="Left" Margin="38,16,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Успеваемость за месяц:" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Width="161"/>
+                <TextBox x:Name="performancepermonth" HorizontalAlignment="Left" Height="23" Margin="38,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <Button Content="Добавить" HorizontalAlignment="Left" Margin="38,168,0,0" VerticalAlignment="Top" Width="120" Click="AddPerfomancePerMonth_Click"/>
+            </Grid>
+        </GroupBox>
+        <Label Content="Средняя успеваемость:" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="resultPerfomance" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="161,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="161,323,0,0" VerticalAlignment="Top" Width="138" Click="AveragePerfomance_Click"/>
+    </Grid>
+</Window>
